@@ -1,0 +1,198 @@
+/* Variables Start */
+:root {
+  --main-color: #2196f3;
+  --main-color-alt: #1787e0;
+  --secendary-color: black;
+  --text-color: #777777;
+  --background-color: #ececec;
+  --section-padding: 50px;
+  --main-transition-time: .3s;
+}
+/* Variables End */
+/* Global Start */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Cairo', sans-serif;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+/* Global End */
+/* Header Start */
+header {
+  background-color: white;
+  box-shadow: 0 0 10px #ddd;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+header .container a.logo img.logo {
+  width: 100px;
+}
+header .container ul.nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+header .container ul.nav > li > a {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  font-size: 18px;
+  color: black;
+  position: relative;
+  transition: var(--main-transition-time);
+  -webkit-transition: var(--main-transition-time);
+  -moz-transition: var(--main-transition-time);
+  -ms-transition: var(--main-transition-time);
+  -o-transition: var(--main-transition-time);
+}
+header .container ul.nav > li > a:hover {
+  color: var(--main-color-alt);
+  background-color: #fafafa;
+}
+header .container ul.nav > li > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--main-color-alt);
+  transition: var(--main-transition-time);
+  -webkit-transition: var(--main-transition-time);
+  -moz-transition: var(--main-transition-time);
+  -ms-transition: var(--main-transition-time);
+  -o-transition: var(--main-transition-time);
+}
+header .container ul.nav > li > a:hover:before {
+  width: 100%;
+}
+/* Header End */
+/* Landing Start */
+.landing {
+  height: calc(100vh - 70px);
+  position: relative;
+  overflow: hidden;
+}
+.landing::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  background-color: var(--background-color);
+  top: -120px;
+  left: -100px;
+  z-index: -1;
+  transform: rotate(-6deg);
+  -webkit-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  -ms-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+}
+.landing .container {
+  display: flex;
+  align-items: center;
+  padding: 50px 15px 100px 15px;
+}
+.landing .container .info{
+  flex: 1;
+}
+.landing .container .info h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+}
+.landing .container .info p {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+.landing .container .image {
+  width: 600px;
+  position: relative;
+  height: 350px;
+}
+.landing .container img {
+  position: absolute;
+  top: -20px;
+  width: 600px;
+  animation: up-and-down .5s linear infinite normal none running;
+  -webkit-animation: up-and-down 3s linear infinite normal none running;
+}
+/* Landing End */
+
+/* Media Screens Start */
+/* Phones */
+@media (max-width: 768px) {
+  header .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  header .container a.logo img.logo {
+    width: 75px;
+    margin: 10px;
+  }
+  header .container ul.nav {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  header .container ul.nav > li > a {
+    padding: 10px;
+    font-size: 14px;
+    height: fit-content;
+  }
+}
+/* Small Screens  */
+@media (min-width: 767px) and (max-width: 991px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Mediume Screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large Screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* Media Screens End */
+/* Animations Start*/
+@keyframes up-and-down {
+  from {
+    top: -20px;
+  }
+  50% {
+    top: -50px;
+  }
+  to {
+    top: -20px;
+  }
+}
+/* Animations End*/
